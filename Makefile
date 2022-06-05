@@ -1,38 +1,41 @@
-NAME =	so_long
+NAME =	fdf
 
-INC =	include
+INC =	./includes
 
-SRCS =	main.c
-
+SRCS =	./srcs/main.c
 
 MLX = /usr/local/lib/
+LIBFT_PATH = ./Libft/
+LIBFT = ${LIBFT_PATH}libft.a
 
 OBJS = ${SRCS:.c=.o}
-OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 CC = gcc
 
 RM = rm -f
 
 CFLAGS = -Wall -Werror -Wextra 
-FLAGS_MLX= -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+
+.c.o:
+	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -c $< -o $@
+
+$(NAME) : $(OBJS) ${LIBFT}
+	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
 
 all: $(NAME)
 
-%.o:  %.c
-	$(CC) $(CFLAGS) $< -I$(INC) -c -o $@
-
-$(NAME) : $(OBJS)
-	$(CC) $(OBJS) $(FLAGS_MLX) -o $(NAME)
+${LIBFT}:
+	make -C ${LIBFT_PATH}
 
 clean :
 	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
+	make -C ${LIBFT_PATH} clean
 
 fclean : clean
 	$(RM) $(NAME)
+	make -C ${LIBFT_PATH} fclean
 
 re : fclean all
 
-bonus : $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) $(FLAGS_MLX) -o $(NAME)
+.PHONY: all clean fclean re
