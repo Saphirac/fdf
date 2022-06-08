@@ -18,6 +18,12 @@ typedef struct	s_data {
 	int		endian;
 }				t_data;
 
+typedef struct	s_map {
+		int	max_x;
+		int	max_y;
+		int	**map;
+}				t_map;
+
 void	their_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 #endif

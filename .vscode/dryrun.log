@@ -1,7 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -c srcs/main.c -o srcs/main.o
- 
-gcc ./srcs/main.o -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz ./Libft/libft.a -o fdf
 make: Leaving directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
  
+Makefile:11: *** recipe commences before first target.  Stop.
+

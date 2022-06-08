@@ -2,7 +2,13 @@ NAME =	fdf
 
 INC =	./includes
 
-SRCS =	./srcs/main.c
+SRCS =	./srcs/main.c \
+		./srcs/parse.c \
+		./srcs/utils.c \
+		./srcs/checks.c \
+		./srcs/fdf_utils.c \
+		./srcs/get_next_line_utils.c \ 
+		./srcs/get_next_line.c
 
 MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/
