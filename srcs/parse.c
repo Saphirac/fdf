@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/08 18:40:25 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/06/19 18:30:47 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	get_x(char *line)
 	char	**split;
 	int		x;
 	
-	split = ft_split(line, ' ');
+	split = ft_split(line, 32);
 	if (check_split(split) == 0)
 	{
 		free(line);
@@ -48,12 +48,11 @@ int	get_x(char *line)
 
 int	size_int(int fd, char c)
 {
-	char	*line;
-	int		x;
-	int		y;
+	char		*line;
+	int			x;
+	static int	y = 0;
 
 	x = 0;
-	y = 0;
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -72,7 +71,7 @@ int	size_int(int fd, char c)
 
 void	fill_map_row(t_map map, int fd)
 {
-	char	line;
+	char	*line;
 	char	**split;
 	int		i;
 	int		j;
@@ -86,6 +85,7 @@ void	fill_map_row(t_map map, int fd)
 		while (++j < map.max_x)
 		{
 			map.map[i] = malloc(sizeof(int) * map.max_x);
+			// malloc a proteger
 			if (split[j])
 				map.map[i][j] = ft_atoi(split[j]);
 			else
@@ -101,14 +101,14 @@ void	fill_map_row(t_map map, int fd)
 
 t_map parse_map(int fd)
 {
-	char	*line;
 	t_map	map;
 
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
 	map.map = malloc(sizeof(int *) * map.max_y);
 	if (!map.map)
-		return (NULL);
-	
+		exit(EXIT_FAILURE);
+	fill_map_row(map, fd);
+	return (map);
 }
 

@@ -26,4 +26,12 @@ typedef struct	s_map {
 
 void	their_mlx_pixel_put(t_data *data, int x, int y, int color);
 
+t_map	 parse_map(int fd);
+void	ft_free(char **str);
+int		is_digit(char *stack);
+int		ft_strrlen(char **str);
+void	ft_free_int(int **tab, int size);
+int		ft_putstr_fd(char *str, int fd);
+void	print_points(t_map map, t_data *data, int scale);
+
 #endif

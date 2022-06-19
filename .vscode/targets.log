@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:11: *** recipe commences before first target.  Stop.
+make: *** No rule to make target 'srcs/main.o', needed by 'fdf'.  Stop.
 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ Makefile:11: *** recipe commences before first target.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  8 17:01:40 2022
+# Make data base, printed on Sun Jun 19 17:52:47 2022
 
 # Variables
 
@@ -40,14 +40,20 @@ XMODIFIERS = @im=ibus
 CURDIR := /mnt/nfs/homes/mcourtoi/c2/fdf
 # makefile
 SHELL = /bin/sh
+# makefile (from 'Makefile', line 22)
+RM = rm -f
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 14)
+MLX = /usr/local/lib/
 # environment
 _ = /usr/bin/code
+# makefile (from 'Makefile', line 24)
+CFLAGS = -Wall -Werror -Wextra 
 # environment
-JOURNAL_STREAM = 9:679288
+JOURNAL_STREAM = 9:881164
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -56,7 +62,7 @@ MAKEFILE_LIST :=  Makefile
 @F = $(notdir $@)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/terminator.desktop
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # environment
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
@@ -66,16 +72,18 @@ XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/mcourtoi/.loca
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101351/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 18)
+OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 189167
+MANAGERPID = 115618
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101351/vscode-ipc-08412e9b-686c-4811-b108-6df823ba13fc.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101351/vscode-ipc-82fd2e9a-9b6a-4bf1-8614-19deba151ed1.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/mcourtoi/c2/fdf
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session3
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101351_4l0Uoi
+KRB5CCNAME = FILE:/tmp/krb5cc_101351_KHFyQh
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +91,7 @@ PATH = /mnt/nfs/homes/mcourtoi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/101351/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e2r7p16.clusters.42paris.fr:@/tmp/.ICE-unix/189630,unix/e2r7p16.clusters.42paris.fr:/tmp/.ICE-unix/189630
+SESSION_MANAGER = local/e1r7p19.42.fr:@/tmp/.ICE-unix/116073,unix/e1r7p19.42.fr:/tmp/.ICE-unix/116073
 # environment
 XDG_RUNTIME_DIR = /run/user/101351
 # environment
@@ -93,7 +101,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 22e7114f80304d85b1b6a0b39cf832d3
+INVOCATION_ID = 9f0bf63fcd9540e390141cc0fedae8bf
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -103,7 +111,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101351/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 189970
+GIO_LAUNCHED_DESKTOP_FILE_PID = 116387
 # automatic
 %F = $(notdir $%)
 # environment
@@ -115,7 +123,7 @@ PWD = /mnt/nfs/homes/mcourtoi/c2/fdf
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 189594
+SSH_AGENT_PID = 116036
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -127,7 +135,7 @@ HOME = /mnt/nfs/homes/mcourtoi
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/mcourtoi/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/mcourtoi/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = mcourtoi
 # environment
@@ -151,9 +159,13 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 5)
-SRCS = ./srcs/main.c ./srcs/parse.c ./srcs/utils.c ./srcs/checks.c ./srcs/fdf_utils.c ./srcs/get_next_line_utils.c \ 
+SRCS = ./srcs/main.c ./srcs/parse.c ./srcs/utils.c ./srcs/checks.c ./srcs/fdf_utils.c ./srcs/get_next_line_utils.c ./srcs/get_next_line.c ./srcs/print_map.c 
 # environment
 SHLVL = 1
+# makefile (from 'Makefile', line 16)
+LIBFT = ${LIBFT_PATH}libft.a
+# makefile (from 'Makefile', line 20)
+CC = gcc
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -161,7 +173,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = mcourtoi
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := fdf
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -183,7 +195,7 @@ TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/101351/vscode-93230969-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/101351/vscode-93230969-1.68.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -204,6 +216,8 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# makefile (from 'Makefile', line 15)
+LIBFT_PATH = ./Libft/
 # environment
 LC_ALL = C
 # environment
@@ -214,6 +228,8 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 SUFFIXES := 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'Makefile', line 25)
+FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -231,11 +247,11 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101351/docker.sock
 # environment
-VSCODE_PID = 190631
+VSCODE_PID = 119541
 # environment
-TERMINATOR_UUID = urn:uuid:3c8d0f61-afe1-4593-9478-c0d0efa2a335
+TERMINATOR_UUID = urn:uuid:dba88e61-6711-4af2-9ad5-e4c422ae5c99
 # variable set hash-table stats:
-# Load=111/1024=11%, Rehash=0, Collisions=14/124=11%
+# Load=119/1024=12%, Rehash=0, Collisions=20/152=13%
 
 # Pattern-specific Variable Values
 
@@ -253,15 +269,69 @@ TERMINATOR_UUID = urn:uuid:3c8d0f61-afe1-4593-9478-c0d0efa2a335
 
 # Files
 
-# Not a target:
-all:
+all: fdf
+#  Phony target (prerequisite of .PHONY).
 #  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PHONY: all clean fclean re
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/checks.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-06-19 17:52:18.334650569
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parse.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Libft/libft.a:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 36):
+	make -C ${LIBFT_PATH}
+
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -c $< -o $@
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 43):
+	$(RM) $(NAME)
+	make -C ${LIBFT_PATH} fclean
+
+# Not a target:
+srcs/get_next_line_utils.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -272,21 +342,66 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+srcs/fdf_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 39):
+	$(RM) $(OBJS)
+	make -C ${LIBFT_PATH} clean
+
+# Not a target:
+srcs/print_map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+srcs/main.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+fdf: srcs/main.o srcs/parse.o srcs/utils.o srcs/checks.o srcs/fdf_utils.o srcs/get_next_line_utils.o srcs/get_next_line.o srcs/print_map.o Libft/libft.a
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/5=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/48=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 112 B / avg = 8 B
-# current buf: size = 8162 B / used = 112 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 292 B / avg = 10 B
+# current buf: size = 8162 B / used = 292 B / count = 29 / avg = 10 B
 
- 
-# strcache performance: lookups = 18 / hit rate = 22%
+# strcache performance: lookups = 51 / hit rate = 43%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Wed Jun  8 17:01:40 2022
+# Load=29/8192=0%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Sun Jun 19 17:52:47 2022
 
  

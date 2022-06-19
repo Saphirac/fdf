@@ -7,8 +7,9 @@ SRCS =	./srcs/main.c \
 		./srcs/utils.c \
 		./srcs/checks.c \
 		./srcs/fdf_utils.c \
-		./srcs/get_next_line_utils.c \ 
-		./srcs/get_next_line.c
+		./srcs/get_next_line_utils.c \
+		./srcs/get_next_line.c \
+		./srcs/print_map.c 
 
 MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/

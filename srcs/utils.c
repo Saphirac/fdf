@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:23:11 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/08 17:34:15 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/06/19 18:05:57 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_free_int(int **tab, int size)
 	free(tab);
 }
 
-void	ft_putstr_fd(char *str, int fd)
+int	ft_putstr_fd(char *str, int fd)
 {
-	write(fd, str, ft_strlen(str));
+	return (write(fd, str, ft_strlen(str)));
 }

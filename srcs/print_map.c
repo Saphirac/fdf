@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checks.c                                           :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/19 18:18:26 by mcourtoi         ###   ########.fr       */
+/*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
+/*   Updated: 2022/06/19 19:28:27 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	is_digit(char *stack)
+void	print_points(t_map map, t_data *data, int scale)
 {
 	int	i;
+	int	j;
 
-	i = -1;
-	while (stack[i + 1] == '-' || stack[i + 1] == '+')
+	i = 0;
+	printf("%d\n", map.max_y);
+	printf("%d\n", map.max_x);
+	while (i < map.max_y)
+	{
+		j = -1;
+		printf("%d\n", i);
+		while (++j < map.max_x)
+			if (map.map[i][j] == 0)
+				their_mlx_pixel_put(data, (j + 1) * scale, (i + 1) * scale, 0x00FF0000);
+			else
+				their_mlx_pixel_put(data, (j + 1) * scale, (i + 1) * scale, 0x0000FF00);
 		i++;
-	while (stack[++i])
-		if (!((stack[i] >= '0' && stack[i] <= '9') || stack[i] == '\n'))
-			return (0);
-	if (i >= 10 && (ft_atoi(stack) > 2147483647
-			|| ft_atoi(stack) < -2147483648))
-		return (0);
-	return (1);
+	}
 }
