@@ -6,11 +6,20 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/19 18:30:47 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/06/20 20:04:17 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	print_strstr(char **str)
+{
+	int	i = -1;
+	while (str[++i])
+	{
+		printf("%s\n", str[i]);
+	}
+}
 
 int	check_split(char **split)
 {
@@ -69,29 +78,31 @@ int	size_int(int fd, char c)
 		return (y);
 }
 
-void	fill_map_row(t_map map, int fd)
+void	fill_map_row(t_map *map, int fd)
 {
 	char	*line;
 	char	**split;
 	int		i;
 	int		j;
 	
-	i = 0;
+	i = -1;
 	line = get_next_line(fd);
-	while (line)
+	while (++i < map->max_y)
 	{
 		split = ft_split(line, ' ');
+		print_strstr(split);
 		j = -1;
-		while (++j < map.max_x)
+		while (++j < map->max_x)
 		{
-			map.map[i] = malloc(sizeof(int) * map.max_x);
+			map->map[i] = malloc(sizeof(int) * map->max_x);
 			// malloc a proteger
+			//printf("split : %s\n", split[j]);
 			if (split[j])
-				map.map[i][j] = ft_atoi(split[j]);
-			else
-				map.map[i][j] = 0;
+				map->map[i][j] = ft_atoi(split[j]);
+			else if (split[j] == NULL)
+				map->map[i][j] = 0;
+			//printf("j : %d\n i : %d\n", j, i);
 		}
-		i++;
 		ft_free(split);
 		free(line);
 		line = get_next_line(fd);
@@ -99,16 +110,21 @@ void	fill_map_row(t_map map, int fd)
 	free(line);
 }
 
-t_map parse_map(int fd)
+t_map parse_map(char **av)
 {
 	t_map	map;
+	int		fd;
 
+	fd = open(av[1], O_RDWR);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
 	map.map = malloc(sizeof(int *) * map.max_y);
 	if (!map.map)
 		exit(EXIT_FAILURE);
-	fill_map_row(map, fd);
+	close(fd);
+	fd = open(av[1], O_RDWR);
+	fill_map_row(&map, fd);
+	close(fd);
 	return (map);
 }
 

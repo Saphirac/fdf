@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'srcs/main.o', needed by 'fdf'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'srcs/main.o', needed by 'fdf'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 19 17:52:47 2022
+# Make data base, printed on Mon Jun 20 18:42:59 2022
 
 # Variables
 
@@ -53,7 +51,7 @@ _ = /usr/bin/code
 # makefile (from 'Makefile', line 24)
 CFLAGS = -Wall -Werror -Wextra 
 # environment
-JOURNAL_STREAM = 9:881164
+JOURNAL_STREAM = 9:276991
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -75,15 +73,15 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 18)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 115618
+MANAGERPID = 22357
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101351/vscode-ipc-82fd2e9a-9b6a-4bf1-8614-19deba151ed1.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101351/vscode-ipc-fa49e9ef-8f66-462f-8447-796199da5ea5.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/mcourtoi/c2/fdf
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session3
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101351_KHFyQh
+KRB5CCNAME = FILE:/tmp/krb5cc_101351_YGLJ5z
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -91,7 +89,7 @@ PATH = /mnt/nfs/homes/mcourtoi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/101351/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r7p19.42.fr:@/tmp/.ICE-unix/116073,unix/e1r7p19.42.fr:/tmp/.ICE-unix/116073
+SESSION_MANAGER = local/e1r9p11.42.fr:@/tmp/.ICE-unix/22808,unix/e1r9p11.42.fr:/tmp/.ICE-unix/22808
 # environment
 XDG_RUNTIME_DIR = /run/user/101351
 # environment
@@ -101,7 +99,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 9f0bf63fcd9540e390141cc0fedae8bf
+INVOCATION_ID = bc6adfab59c04b6dbcdd6f80fabcb83f
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,7 +109,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101351/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 116387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 23167
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +121,7 @@ PWD = /mnt/nfs/homes/mcourtoi/c2/fdf
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 116036
+SSH_AGENT_PID = 22771
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -247,9 +245,9 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101351/docker.sock
 # environment
-VSCODE_PID = 119541
+VSCODE_PID = 40288
 # environment
-TERMINATOR_UUID = urn:uuid:dba88e61-6711-4af2-9ad5-e4c422ae5c99
+TERMINATOR_UUID = urn:uuid:4a7fe060-72bf-40a6-8ad1-7379bc838ef1
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=20/152=13%
 
@@ -259,9 +257,9 @@ TERMINATOR_UUID = urn:uuid:dba88e61-6711-4af2-9ad5-e4c422ae5c99
 
 # Directories
 
-# . (device 56, inode 139205426): 9 files, no impossibilities.
+# . (device 56, inode 139205426): 11 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -274,43 +272,48 @@ all: fdf
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # Not a target:
 srcs/checks.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:17.865397249
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-19 17:52:18.334650569
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/parse.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:17.765397352
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 srcs/utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:17.817397298
+#  File has been updated.
+#  Successfully updated.
 
 Libft/libft.a:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-06-20 18:42:18.38139672
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 36):
 	make -C ${LIBFT_PATH}
 
@@ -332,9 +335,10 @@ fclean: clean
 
 # Not a target:
 srcs/get_next_line_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:17.965397147
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -344,9 +348,10 @@ srcs/get_next_line_utils.o:
 
 # Not a target:
 srcs/fdf_utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:17.905397208
+#  File has been updated.
+#  Successfully updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -365,26 +370,30 @@ clean:
 
 # Not a target:
 srcs/print_map.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:18.06939704
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 srcs/get_next_line.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-20 18:42:18.021397089
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 srcs/main.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-06-20 18:42:17.68939743
+#  File has been updated.
+#  Successfully updated.
 
 fdf: srcs/main.o srcs/parse.o srcs/utils.o srcs/checks.o srcs/fdf_utils.o srcs/get_next_line_utils.o srcs/get_next_line.o srcs/print_map.o Libft/libft.a
 #  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-06-20 18:42:18.453396646
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 31):
 	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
 
@@ -396,12 +405,12 @@ fdf: srcs/main.o srcs/parse.o srcs/utils.o srcs/checks.o srcs/fdf_utils.o srcs/g
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 292 B / avg = 10 B
-# current buf: size = 8162 B / used = 292 B / count = 29 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 30 / storage = 302 B / avg = 10 B
+# current buf: size = 8162 B / used = 302 B / count = 30 / avg = 10 B
 
-# strcache performance: lookups = 51 / hit rate = 43%
+# strcache performance: lookups = 53 / hit rate = 43%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Sun Jun 19 17:52:47 2022
+# Load=30/8192=0%, Rehash=0, Collisions=1/53=2%
+# Finished Make data base on Mon Jun 20 18:42:59 2022
 
  
