@@ -22,7 +22,7 @@ CC = gcc
 RM = rm -f
 
 CFLAGS = -Wall -Werror -Wextra 
-FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -c $< -o $@

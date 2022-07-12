@@ -52,3 +52,20 @@ int	ft_putstr_fd(char *str, int fd)
 {
 	return (write(fd, str, ft_strlen(str)));
 }
+
+int	*ft_calloc(int size)
+{
+	int	*ret;
+	int	i;
+
+	ret = malloc(sizeof(int) * size);
+	if (!ret)
+		return (NULL);
+	i = 0;
+	while (i < size - 1)
+	{
+		ret[i] = 0;
+		i++;
+	}
+	return (ret);
+}

@@ -21,6 +21,22 @@ void	print_strstr(char **str)
 	}
 }
 
+void	print_tmap(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map->max_y)
+	{
+		j = -1;
+		while (++j < map->max_x)
+			printf("%d ", map->map[i][j]);
+		printf("\n");
+		i++;
+	}
+}
+
 int	check_split(char **split)
 {
 	int	i;
@@ -78,31 +94,39 @@ int	size_int(int fd, char c)
 		return (y);
 }
 
+void	fill_subrow(int *map, int size, char **split)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (split[i])
+			map[i] = ft_atoi(split[i]);
+		else
+			map[i] = 0;
+		i++;
+	}
+}
+
 void	fill_map_row(t_map *map, int fd)
 {
 	char	*line;
 	char	**split;
 	int		i;
-	int		j;
 	
 	i = -1;
+	map->map = malloc(sizeof(int *) * map->max_y);
+	if (!map->map)
+		exit(EXIT_FAILURE);
 	line = get_next_line(fd);
 	while (++i < map->max_y)
 	{
 		split = ft_split(line, ' ');
-		print_strstr(split);
-		j = -1;
-		while (++j < map->max_x)
-		{
-			map->map[i] = malloc(sizeof(int) * map->max_x);
-			// malloc a proteger
-			//printf("split : %s\n", split[j]);
-			if (split[j])
-				map->map[i][j] = ft_atoi(split[j]);
-			else if (split[j] == NULL)
-				map->map[i][j] = 0;
-			//printf("j : %d\n i : %d\n", j, i);
-		}
+		map->map[i] = ft_calloc(map->max_x);
+		if (!map->map[i])
+			exit(EXIT_FAILURE);
+		fill_subrow(map->map[i], map->max_x, split);
 		ft_free(split);
 		free(line);
 		line = get_next_line(fd);
@@ -118,9 +142,6 @@ t_map parse_map(char **av)
 	fd = open(av[1], O_RDWR);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
-	map.map = malloc(sizeof(int *) * map.max_y);
-	if (!map.map)
-		exit(EXIT_FAILURE);
 	close(fd);
 	fd = open(av[1], O_RDWR);
 	fill_map_row(&map, fd);

@@ -28,6 +28,7 @@ void	their_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 t_map	 parse_map(char **av);
 void	ft_free(char **str);
+int		*ft_calloc(int size);
 int		is_digit(char *stack);
 int		ft_strrlen(char **str);
 void	ft_free_int(int **tab, int size);
