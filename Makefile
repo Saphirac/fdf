@@ -9,7 +9,8 @@ SRCS =	./srcs/main.c \
 		./srcs/fdf_utils.c \
 		./srcs/get_next_line_utils.c \
 		./srcs/get_next_line.c \
-		./srcs/print_map.c 
+		./srcs/print_map.c \
+		./srcs/isometrics.c
 
 MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/
@@ -25,7 +26,7 @@ CFLAGS = -Wall -Werror -Wextra
 FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 
 .c.o:
-	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -lm -c $< -o $@
 
 $(NAME) : $(OBJS) ${LIBFT}
 	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)

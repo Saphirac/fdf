@@ -69,3 +69,21 @@ int	*ft_calloc(int size)
 	}
 	return (ret);
 }
+
+int	ft_smallest(int **tab, int size)
+{
+	int	n;
+	int	i;
+
+	i = 0;
+	n = tab[0][0];
+	while (i < size)
+	{
+		if (tab[i][0] < n)
+			n = tab[i][0];
+		if (tab[i][1] < n)
+			n = tab[i][1];
+		i++;
+	}
+	return (n);
+}

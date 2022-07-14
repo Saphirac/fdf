@@ -6,36 +6,11 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/20 20:04:17 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/13 03:18:11 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	print_strstr(char **str)
-{
-	int	i = -1;
-	while (str[++i])
-	{
-		printf("%s\n", str[i]);
-	}
-}
-
-void	print_tmap(t_map *map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < map->max_y)
-	{
-		j = -1;
-		while (++j < map->max_x)
-			printf("%d ", map->map[i][j]);
-		printf("\n");
-		i++;
-	}
-}
 
 int	check_split(char **split)
 {
@@ -134,18 +109,87 @@ void	fill_map_row(t_map *map, int fd)
 	free(line);
 }
 
-t_map parse_map(char **av)
+void	make_positive(t_map *ret)
+{
+	int	i;
+	int	coeff;
+
+	coeff = ft_abs(ft_smallest(ret->map, ret->n_points)) + 1;
+	i = -1;
+	while (++i < ret->n_points)
+	{
+		ret->map[i][0] += coeff;
+		ret->map[i][1] += coeff;
+	}
+}
+
+void	sub_proper_map(t_map *map, t_map *ret)
+{
+	int	i;
+	int	j;
+	int	index;
+
+	index = 0;
+	while (index < ret->n_points)
+	{
+		i = -1;
+		while (++i < map->max_y)
+		{
+			j = -1;
+			while (++j < map->max_x)
+			{
+				ret->map[index][0] = j * ret->scale;
+				ret->map[index][1] = i * ret->scale;
+				ret->map[index][2] = map->map[i][j];
+				index++;
+			}
+		}
+	}
+	//make_positive(ret);
+}
+
+t_map	proper_map(t_map map)
+{
+	t_map	ret;
+	int		i;
+
+	ret.max_x = map.max_x;
+	ret.max_y = map.max_y;
+	ret.n_points = map.n_points;
+	ret.scale = map.scale;
+	ret.map = malloc(sizeof(int *) * (ret.n_points));
+	if (!ret.map)
+		exit(EXIT_FAILURE);
+	i = -1;
+	while (++i < map.n_points)
+	{
+		ret.map[i] = malloc(sizeof(int) * 3);
+		if(!ret.map[i])
+			exit(EXIT_FAILURE);
+	}
+	sub_proper_map(&map, &ret);
+	return (ret);
+}
+
+t_map	parse_map(char **av)
 {
 	t_map	map;
+	t_map	ret;
 	int		fd;
 
 	fd = open(av[1], O_RDWR);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
+	map.scale = 20;
+	map.n_points = map.max_y * map.max_x;
 	close(fd);
 	fd = open(av[1], O_RDWR);
 	fill_map_row(&map, fd);
 	close(fd);
-	return (map);
+	ret = proper_map(map);
+	if (!ret.map)
+		ret.map = NULL;
+	ft_free_int(map.map, map.max_y);
+	return (ret);
 }
 
