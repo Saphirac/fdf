@@ -27,6 +27,12 @@ typedef struct	s_map {
 		int	scale;
 }				t_map;
 
+typedef struct	s_dot {
+		int	x;
+		int	y;
+		int	z;
+}				t_dot;
+
 void	their_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 t_map	 parse_map(char **av);
