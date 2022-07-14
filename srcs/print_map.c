@@ -6,14 +6,13 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/14 04:04:04 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/14 15:38:27 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 //p1 : point 1, p2 : point 2
-
 void	bresenham(t_dot p1, t_dot p2, t_data *data)
 {
 	int	x;
@@ -63,19 +62,32 @@ void	print_points(t_map map, t_data *data)
 
 	i = 0;
 	isometric_transform(&map);
-	p1 = copy_data(map.map[i]);
-	while (i < map.n_points)
+	while (i < map.max_y)
 	{
 		j = -1;
-		while (++j < map.max_x)
+		while (++j < map.max_x - 1)
 		{
-			p1 = copy_data(map.map[i]);
-			p2 = copy_data(map.map[i + 1]);
+			p1 = copy_data(map.map[j + (map.max_x * i)]);
+			p2 = copy_data(map.map[j + (map.max_x * i) + 1]);
 			bresenham(p1, p2, data);
-			i++;
 		}
 		i++;
 		//printf("px : %d\n py : %d\n", p1.x, p1.y);		
 		//printf("x : %d\n y : %d\n", map.map[i][0], map.map[i][1]);
 	}
+
+	/*i = 0;
+	while (i < map.max_x)
+	{
+		j = map.max_x * i - 1;
+		while (++j < map.max_y - 1)
+		{
+			p1 = copy_data(map.map[j]);
+			p2 = copy_data(map.map[j + (map.max_x * (i + 1))]);
+			bresenham(p1, p2, data, 0);
+		}
+		i++;
+		//printf("px : %d\n py : %d\n", p1.x, p1.y);		
+		//printf("x : %d\n y : %d\n", map.map[i][0], map.map[i][1]);
+	}*/
 }
