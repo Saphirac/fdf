@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/13 03:18:11 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/14 21:53:47 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ t_map	parse_map(char **av)
 	fd = open(av[1], O_RDWR);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
-	map.scale = 20;
+	map.scale = 30;
 	map.n_points = map.max_y * map.max_x;
 	close(fd);
 	fd = open(av[1], O_RDWR);
