@@ -45,5 +45,10 @@ int		ft_strrlen(char **str);
 void	ft_free_int(int **tab, int size);
 int		ft_putstr_fd(char *str, int fd);
 void	print_points(t_map map, t_data *data);
+void	bresenham(t_dot p1, t_dot p2, t_data *data);
+int		change_color(int z, int z2);
+int		check_split(char **split);
+t_map	proper_map(t_map map);
+void	apply_scale(t_map *map);
 
 #endif

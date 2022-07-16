@@ -10,7 +10,9 @@ SRCS =	./srcs/main.c \
 		./srcs/get_next_line_utils.c \
 		./srcs/get_next_line.c \
 		./srcs/print_map.c \
-		./srcs/isometrics.c
+		./srcs/isometrics.c \
+		./srcs/bresenham.c \
+		./srcs/parse_2.c
 
 MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/

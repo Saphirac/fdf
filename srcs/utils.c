@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:23:11 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/19 18:05:57 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/16 01:19:40 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,22 +68,4 @@ int	*ft_calloc(int size)
 		i++;
 	}
 	return (ret);
-}
-
-int	ft_smallest(int **tab, int size)
-{
-	int	n;
-	int	i;
-
-	i = 0;
-	n = tab[0][0];
-	while (i < size)
-	{
-		if (tab[i][0] < n)
-			n = tab[i][0];
-		if (tab[i][1] < n)
-			n = tab[i][1];
-		i++;
-	}
-	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/06/19 18:18:26 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/16 01:30:10 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,22 @@ int	is_digit(char *stack)
 	if (i >= 10 && (ft_atoi(stack) > 2147483647
 			|| ft_atoi(stack) < -2147483648))
 		return (0);
+	return (1);
+}
+
+int	check_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		if (is_digit(split[i]) == 0)
+		{	
+			ft_free(split);
+			return (0);
+		}
+		i++;
+	}
 	return (1);
 }

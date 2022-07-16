@@ -6,34 +6,17 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/14 21:53:47 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/16 01:13:54 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	check_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-	{
-		if (is_digit(split[i]) == 0)
-		{	
-			ft_free(split);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
 int	get_x(char *line)
 {
 	char	**split;
 	int		x;
-	
+
 	split = ft_split(line, 32);
 	if (check_split(split) == 0)
 	{
@@ -89,7 +72,7 @@ void	fill_map_row(t_map *map, int fd)
 	char	*line;
 	char	**split;
 	int		i;
-	
+
 	i = -1;
 	map->map = malloc(sizeof(int *) * map->max_y);
 	if (!map->map)
@@ -107,68 +90,6 @@ void	fill_map_row(t_map *map, int fd)
 		line = get_next_line(fd);
 	}
 	free(line);
-}
-
-void	make_positive(t_map *ret)
-{
-	int	i;
-	int	coeff;
-
-	coeff = ft_abs(ft_smallest(ret->map, ret->n_points)) + 1;
-	i = -1;
-	while (++i < ret->n_points)
-	{
-		ret->map[i][0] += coeff;
-		ret->map[i][1] += coeff;
-	}
-}
-
-void	sub_proper_map(t_map *map, t_map *ret)
-{
-	int	i;
-	int	j;
-	int	index;
-
-	index = 0;
-	while (index < ret->n_points)
-	{
-		i = -1;
-		while (++i < map->max_y)
-		{
-			j = -1;
-			while (++j < map->max_x)
-			{
-				ret->map[index][0] = j * ret->scale;
-				ret->map[index][1] = i * ret->scale;
-				ret->map[index][2] = map->map[i][j];
-				index++;
-			}
-		}
-	}
-	//make_positive(ret);
-}
-
-t_map	proper_map(t_map map)
-{
-	t_map	ret;
-	int		i;
-
-	ret.max_x = map.max_x;
-	ret.max_y = map.max_y;
-	ret.n_points = map.n_points;
-	ret.scale = map.scale;
-	ret.map = malloc(sizeof(int *) * (ret.n_points));
-	if (!ret.map)
-		exit(EXIT_FAILURE);
-	i = -1;
-	while (++i < map.n_points)
-	{
-		ret.map[i] = malloc(sizeof(int) * 3);
-		if(!ret.map[i])
-			exit(EXIT_FAILURE);
-	}
-	sub_proper_map(&map, &ret);
-	return (ret);
 }
 
 t_map	parse_map(char **av)
@@ -192,4 +113,3 @@ t_map	parse_map(char **av)
 	ft_free_int(map.map, map.max_y);
 	return (ret);
 }
-
