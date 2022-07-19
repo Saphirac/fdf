@@ -7,8 +7,8 @@ SRCS =	./srcs/main.c \
 		./srcs/utils.c \
 		./srcs/checks.c \
 		./srcs/fdf_utils.c \
-		./srcs/get_next_line_utils.c \
-		./srcs/get_next_line.c \
+		./gnl/get_next_line_utils.c \
+		./gnl/get_next_line.c \
 		./srcs/print_map.c \
 		./srcs/isometrics.c \
 		./srcs/bresenham.c \

@@ -10,12 +10,15 @@
 # include <get_next_line.h>
 # include <mlx.h>
 # include <math.h>
+# include <X11/keysym.h>
 
 typedef struct	s_data {
+	void	*mlx_ptr;
+	void	*win_ptr;
 	void	*img;
 	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
+	int		bpp;
+	int		line_len;
 	int		endian;
 }				t_data;
 
@@ -33,7 +36,7 @@ typedef struct	s_dot {
 		int	z;
 }				t_dot;
 
-void	their_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	img_pix_put(t_data *img, int x, int y, int color);
 
 t_map	 parse_map(char **av);
 void	ft_free(char **str);
