@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 01:12:25 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/16 01:32:48 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/21 21:22:51 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_map	proper_map(t_map map)
 	ret.max_y = map.max_y;
 	ret.n_points = map.n_points;
 	ret.scale = map.scale;
+	ret.center = map.center;
 	ret.map = malloc(sizeof(int *) * (ret.n_points));
 	if (!ret.map)
 		exit(EXIT_FAILURE);

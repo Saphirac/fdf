@@ -28,6 +28,7 @@ typedef struct	s_map {
 		int	**map;
 		int	n_points;
 		int	scale;
+		int	center;
 }				t_map;
 
 typedef struct	s_dot {
@@ -53,5 +54,8 @@ int		change_color(int z, int z2);
 int		check_split(char **split);
 t_map	proper_map(t_map map);
 void	apply_scale(t_map *map);
+void	apply_centering(t_map *map);
+int		check_file(char *str);
+
 
 #endif

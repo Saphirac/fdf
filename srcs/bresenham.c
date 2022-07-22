@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 03:10:32 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/19 03:10:55 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:58:55 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	bresenham_dx_pos(t_dot p1, t_dot p2, t_data *data)
 	p = 2 * dy - dx;
 	while (x++ <= p2.x)
 	{
-		img_pix_put(data, x + 700, y + 300, change_color(p1.z, p2.z));
+		img_pix_put(data, x, y, change_color(p1.z, p2.z));
 		if (p < 0)
 			p = p + (2 * dy);
 		else
@@ -56,7 +56,7 @@ void	bresenham_dx_neg(t_dot p1, t_dot p2, t_data *data)
 	p = 2 * dy - dx;
 	while (x++ <= p2.x)
 	{
-		img_pix_put(data, x + 700, y + 300, change_color(p1.z, p2.z));
+		img_pix_put(data, x, y, change_color(p1.z, p2.z));
 		if (p < 0)
 			p = p + (2 * dy);
 		else
@@ -85,7 +85,7 @@ void	bresenham_dy_pos(t_dot p1, t_dot p2, t_data *data)
 	p = 2 * dy - dx;
 	while (++y <= p2.y)
 	{
-		img_pix_put(data, x + 700, y + 300, change_color(p1.z, p2.z));
+		img_pix_put(data, x, y, change_color(p1.z, p2.z));
 		if (p < 0)
 			p = p + (2 * dy);
 		else
@@ -114,7 +114,7 @@ void	bresenham_dy_neg(t_dot p1, t_dot p2, t_data *data)
 	p = 2 * dy - dx;
 	while (++y <= p2.y)
 	{
-		img_pix_put(data, x + 700, y + 300, change_color(p1.z, p2.z));
+		img_pix_put(data, x, y, change_color(p1.z, p2.z));
 		if (p < 0)
 			p = p + (2 * dy);
 		else

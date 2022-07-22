@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/16 01:30:10 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:59:45 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,27 @@ int	check_split(char **split)
 		i++;
 	}
 	return (1);
+}
+
+int	check_file(char *str)
+{
+	int	i;
+
+	i = ft_strlen(str);
+	if (str[i - 1] != 'f')
+		return (1);
+	if (str[i - 2] != 'd')
+		return (1);
+	if (str[i - 3] != 'f')
+		return (1);
+	if (str[i - 4] != '.')
+		return (1);
+	i = open(str, O_RDWR);
+	if (i < 0)
+	{
+		close(i);
+		return (1);
+	}
+	close(i);
+	return (0);
 }

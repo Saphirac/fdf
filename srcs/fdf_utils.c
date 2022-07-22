@@ -6,20 +6,19 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:52 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/19 02:54:14 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:57:57 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-
 void	img_pix_put(t_data *img, int x, int y, int color)
 {
-	char    *pixel;
+	char	*pixel;
 	int		i;
 
 	i = img->bpp - 8;
-    pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	pixel = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	while (i >= 0)
 	{
 		if (img->endian != 0)

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 03:14:14 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/16 01:49:34 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/07/21 20:50:32 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@ void	apply_scale(t_map *map)
 	{
 		map->map[i][0] *= map->scale;
 		map->map[i][1] *= map->scale;
+	}
+}
+
+void	apply_centering(t_map *map)
+{
+	int	i;
+
+	i = -1;
+	while (++i < map->n_points)
+	{
+		map->map[i][0] += map->center * 2;
+		map->map[i][1] += map->center;
 	}
 }
 
