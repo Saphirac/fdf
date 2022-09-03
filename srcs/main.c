@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:47 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/22 13:05:58 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/03 14:51:31 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ t_data	set_params(void)
 		exit(0);
 	}
 	data.img = mlx_new_image(data.mlx_ptr, 1920, 1280);
+	data.lenght = 1920;
+	data.width = 1280;
 	data.addr = mlx_get_data_addr(data.img, &data.bpp,
 			&data.line_len, &data.endian);
 	return (data);

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/22 12:59:45 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/03 16:34:29 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,12 @@ int	check_file(char *str)
 		return (1);
 	}
 	close(i);
+	return (0);
+}
+
+int	can_i_print(int x, int y, t_data *data)
+{
+	if (x > data->lenght - 1 || y > (data->width - 1))
+		return (1);
 	return (0);
 }

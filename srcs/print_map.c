@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/21 20:44:24 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/03 17:00:52 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	change_color(int z, int z2)
 	if (z == 0 && z2 == 0)
 		return (0xFFFFFFFF);
 	else if (z > 0 || z2 > 0)
-		return (0x00FF00FF);
+		return (0xFFFFFFFF);
 	else if (z < 0 || z2 < 0)
-		return (0x000000FF);
+		return (0xFFFFFFFF);
 	else
-		return (0x00FFFF00);
+		return (0xFFFFFFFF);
 }
 
 void	print_line(t_map map, t_data *data)
@@ -78,6 +78,7 @@ void	print_columns(t_map map, t_data *data)
 
 void	print_points(t_map map, t_data *data)
 {
+	map.scale = 30;
 	apply_scale(&map);
 	isometric_transform(&map);
 	apply_centering(&map);

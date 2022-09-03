@@ -20,6 +20,8 @@ typedef struct	s_data {
 	int		bpp;
 	int		line_len;
 	int		endian;
+	int		lenght;
+	int		width;
 }				t_data;
 
 typedef struct	s_map {
@@ -56,6 +58,7 @@ t_map	proper_map(t_map map);
 void	apply_scale(t_map *map);
 void	apply_centering(t_map *map);
 int		check_file(char *str);
+int		can_i_print(int x, int y, t_data *data);
 
 
 #endif
