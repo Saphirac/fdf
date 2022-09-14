@@ -1,17 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/mcourtoi/c2/fdf'
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/main.c -o srcs/main.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/parse.c -o srcs/parse.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/utils.c -o srcs/utils.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/checks.c -o srcs/checks.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/fdf_utils.c -o srcs/fdf_utils.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c gnl/get_next_line_utils.c -o gnl/get_next_line_utils.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c gnl/get_next_line.c -o gnl/get_next_line.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/print_map.c -o srcs/print_map.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/isometrics.c -o srcs/isometrics.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/bresenham.c -o srcs/bresenham.o
-gcc -Wall -Werror -Wextra  -I./includes -Imlx_linux -O3 -lm -c srcs/parse_2.c -o srcs/parse_2.o
-make -C ./Libft/
-gcc ./srcs/main.o ./srcs/parse.o ./srcs/utils.o ./srcs/checks.o ./srcs/fdf_utils.o ./gnl/get_next_line_utils.o ./gnl/get_next_line.o ./srcs/print_map.o ./srcs/isometrics.o ./srcs/bresenham.o ./srcs/parse_2.o -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm ./Libft/libft.a -o fdf
-make: Leaving directory '/home/mcourtoi/c2/fdf'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
+make: 'fdf' is up to date.
+make: Leaving directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
  

@@ -59,6 +59,7 @@ void	apply_scale(t_map *map);
 void	apply_centering(t_map *map);
 int		check_file(char *str);
 int		can_i_print(int x, int y, t_data *data);
+void	trace_line(t_dot p1, t_dot p2, t_data *data);
 
 
 #endif

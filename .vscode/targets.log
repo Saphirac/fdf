@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Jul 22 12:36:39 2022
+# Make data base, printed on Wed Sep 14 16:49:36 2022
 
 # Variables
 
@@ -15,110 +16,175 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = ELECTRON_RUN_AS_NODE/w:
+DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
-# automatic
-@F = $(notdir $@)
+# environment
+XAUTHORITY = /mnt/nfs/homes/mcourtoi/.Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/mcourtoi/c2/fdf
+CURDIR := /mnt/nfs/homes/mcourtoi/c2/fdf
 # makefile
- 
 SHELL = /bin/sh
-# makefile (from 'Makefile', line 25)
+# makefile (from 'Makefile', line 26)
 RM = rm -f
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
-# makefile (from 'Makefile', line 17)
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 18)
 MLX = /usr/local/lib/
 # environment
-_ = /mnt/c/Users/mimif/AppData/Local/Programs/Microsoft VS Code/bin/code
-# makefile (from 'Makefile', line 27)
+_ = /usr/bin/code
+# makefile (from 'Makefile', line 28)
 CFLAGS = -Wall -Werror -Wextra 
+# environment
+JOURNAL_STREAM = 9:7093737
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/terminator.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
-# makefile (from 'Makefile', line 21)
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/mcourtoi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101351/bus
+# makefile (from 'Makefile', line 22)
 OBJS = ${SRCS:.c=.o}
 # environment
-VSCODE_CWD = /mnt/c/Users/mimif/AppData/Local/Programs/Microsoft VS Code
+MANAGERPID = 842180
+# environment
+VSCODE_CWD = /mnt/nfs/homes/mcourtoi/c2/fdf
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session23
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_101351_U2gU4P
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/mcourtoi/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/mimif/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/mimif/AppData/Local/Programs/Microsoft VS Code/bin
+PATH = /mnt/nfs/homes/mcourtoi/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
-XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
+GPG_AGENT_INFO = /run/user/101351/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/e1r2p8.clusters.42paris.fr:@/tmp/.ICE-unix/842671,unix/e1r2p8.clusters.42paris.fr:/tmp/.ICE-unix/842671
+# environment
+XDG_RUNTIME_DIR = /run/user/101351
+# environment
+XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-7eca8519-69eb-4ec6-b2af-fc06fa364698.sock
+INVOCATION_ID = a16ea5b3cdef458bb16e87a41300075d
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/mcourtoi
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/101351/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 845134
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-PWD = /home/mcourtoi/c2/fdf
+PWD = /mnt/nfs/homes/mcourtoi/c2/fdf
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/28205_interop
+SSH_AGENT_PID = 842595
 # environment
-PULSE_SERVER = /mnt/wslg/PulseServer
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/mcourtoi
+HOME = /mnt/nfs/homes/mcourtoi
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/mcourtoi/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
 # environment
 LOGNAME = mcourtoi
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 MAKELEVEL := 0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from 'Makefile', line 5)
-SRCS = ./srcs/main.c ./srcs/parse.c ./srcs/utils.c ./srcs/checks.c ./srcs/fdf_utils.c ./gnl/get_next_line_utils.c ./gnl/get_next_line.c ./srcs/print_map.c ./srcs/isometrics.c ./srcs/bresenham.c ./srcs/parse_2.c
 # environment
-SHLVL = 1
-# makefile (from 'Makefile', line 19)
+QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 5)
+SRCS = ./srcs/main.c ./srcs/parse.c ./srcs/utils.c ./srcs/checks.c ./srcs/fdf_utils.c ./gnl/get_next_line_utils.c ./gnl/get_next_line.c ./srcs/print_map.c ./srcs/isometrics.c ./srcs/bresenham.c ./srcs/parse_2.c ./srcs/dda.c
+# environment
+SHLVL = 2
+# makefile (from 'Makefile', line 20)
 LIBFT = ${LIBFT_PATH}libft.a
-# makefile (from 'Makefile', line 23)
+# makefile (from 'Makefile', line 24)
 CC = gcc
+# environment
+IM_CONFIG_PHASE = 1
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = mcourtoi
 # makefile
 .DEFAULT_GOAL := fdf
-# makefile (from 'Makefile', line 1)
-NAME = fdf
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/mimif/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
 # makefile (from 'Makefile', line 3)
 INC = ./includes
 # environment
-OLDPWD = /mnt/c/Users/mimif/AppData/Local/Programs/Microsoft VS Code
+OLDPWD = /mnt/nfs/homes/mcourtoi/c2
+# environment
+TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/101351/vscode-93230969-1.71.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -127,41 +193,54 @@ MFLAGS = -pqrR
 *D = $(patsubst %/,%,$(dir $*))
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
 # environment
-VSCODE_HANDLES_SIGPIPE = true
+QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'Makefile', line 18)
+# makefile (from 'Makefile', line 19)
 LIBFT_PATH = ./Libft/
 # environment
 LC_ALL = C
 # environment
-HOSTTYPE = x86_64
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
 # environment
-WAYLAND_DISPLAY = wayland-0
-# makefile (from 'Makefile', line 28)
+CHROME_DESKTOP = code-url-handler.desktop
+# makefile (from 'Makefile', line 29)
 FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 1)
+NAME = fdf
 # default
 .RECIPEPREFIX := 
 # environment
 LANG = C
 # environment
- 
 TERM = xterm-256color
 # environment
-WSL_DISTRO_NAME = Ubuntu
+TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
+# environment
+DOCKER_HOST = unix:///run/user/101351/docker.sock
+# environment
+VSCODE_PID = 845223
+# environment
+TERMINATOR_UUID = urn:uuid:f1770ab4-ca54-4643-b9bc-bd4d195fc011
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=6/108=6%
+# Load=114/1024=11%, Rehash=0, Collisions=20/147=14%
 
 # Pattern-specific Variable Values
 
@@ -169,9 +248,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2080, inode 21141): 13 files, no impossibilities.
+# . (device 57, inode 139205426): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -195,58 +274,59 @@ all: fdf
 # Not a target:
 srcs/checks.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 21:09:54.6220694
+#  Last modified 2022-09-11 22:12:00.919712482
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 02:36:25.0096493
+#  Last modified 2022-09-14 16:46:42.935429771
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 srcs/parse.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 21:16:56.8720694
+#  Last modified 2022-09-11 22:12:00.860712154
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:29:51.4420694
+#  Last modified 2022-09-11 22:12:00.889712315
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 gnl/get_next_line_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:29:51.7620694
+#  Last modified 2022-09-11 22:12:00.980712821
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/bresenham.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:43:22.4920694
+#  Last modified 2022-09-11 22:12:01.117713582
 #  File has been updated.
 #  Successfully updated.
 
 Libft/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-21 20:29:52.8020694
+#  Last modified 2022-09-03 14:59:49.578116107
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 39):
+#  recipe to execute (from 'Makefile', line 40):
 	make -C ${LIBFT_PATH}
 
 .c.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 32):
 	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -lm -c $< -o $@
 
 fclean: clean
@@ -254,14 +334,14 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 46):
+#  recipe to execute (from 'Makefile', line 47):
 	$(RM) $(NAME)
 	make -C ${LIBFT_PATH} fclean
 
 # Not a target:
 srcs/isometrics.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:50:34.2120694
+#  Last modified 2022-09-11 22:12:01.069713315
 #  File has been updated.
 #  Successfully updated.
 
@@ -274,7 +354,7 @@ srcs/isometrics.o:
 # Not a target:
 srcs/fdf_utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:29:51.6620694
+#  Last modified 2022-09-11 22:12:00.947712637
 #  File has been updated.
 #  Successfully updated.
 
@@ -289,61 +369,67 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 42):
+#  recipe to execute (from 'Makefile', line 43):
 	$(RM) $(OBJS)
 	make -C ${LIBFT_PATH} clean
 
 # Not a target:
-srcs/parse_2.o:
- 
+srcs/dda.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 21:23:07.0720694
+#  Last modified 2022-09-14 16:46:44.980441041
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+srcs/parse_2.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-09-11 22:12:01.150713765
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/print_map.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:44:39.6620694
+#  Last modified 2022-09-14 16:46:21.751313032
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 gnl/get_next_line.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 20:29:51.8620694
+#  Last modified 2022-09-11 22:12:01.002712943
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 srcs/main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-21 21:29:20.3920694
+#  Last modified 2022-09-11 22:12:00.822711943
 #  File has been updated.
 #  Successfully updated.
 
-fdf: srcs/main.o srcs/parse.o srcs/utils.o srcs/checks.o srcs/fdf_utils.o gnl/get_next_line_utils.o gnl/get_next_line.o srcs/print_map.o srcs/isometrics.o srcs/bresenham.o srcs/parse_2.o Libft/libft.a
+fdf: srcs/main.o srcs/parse.o srcs/utils.o srcs/checks.o srcs/fdf_utils.o gnl/get_next_line_utils.o gnl/get_next_line.o srcs/print_map.o srcs/isometrics.o srcs/bresenham.o srcs/parse_2.o srcs/dda.o Libft/libft.a
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-21 21:29:20.8420694
+#  Last modified 2022-09-14 16:46:45.026441294
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 35):
 	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=0/54=0%
+# Load=23/1024=2%, Rehash=0, Collisions=0/56=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 35 / storage = 360 B / avg = 10 B
-# current buf: size = 8162 B / used = 360 B / count = 35 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 396 B / avg = 10 B
+# current buf: size = 8162 B / used = 396 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 58 / hit rate = 39%
+# strcache performance: lookups = 61 / hit rate = 37%
 # hash-table stats:
-# Load=35/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Fri Jul 22 12:36:39 2022
+# Load=38/8192=0%, Rehash=0, Collisions=1/61=2%
+# Finished Make data base on Wed Sep 14 16:49:36 2022
 
  
