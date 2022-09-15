@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:47 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/03 14:51:31 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/15 20:29:31 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int	main(int ac, char **av)
 			if (!map.map)
 				return (1);
 			data = set_params();
-			mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img, 0, 0);
 			print_points(map, &data);
+			mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img, 0, 0);
 			ft_free_int(map.map, map.n_points);
 			mlx_loop_hook(data.mlx_ptr, &handle_no_event, &data);
 			mlx_key_hook(data.win_ptr, &handle_input, &data);

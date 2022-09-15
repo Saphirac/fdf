@@ -33,12 +33,6 @@ typedef struct	s_map {
 		int	center;
 }				t_map;
 
-typedef struct	s_dot {
-		int	x;
-		int	y;
-		int	z;
-}				t_dot;
-
 void	img_pix_put(t_data *img, int x, int y, int color);
 
 t_map	 parse_map(char **av);
@@ -51,7 +45,7 @@ int		ft_strrlen(char **str);
 void	ft_free_int(int **tab, int size);
 int		ft_putstr_fd(char *str, int fd);
 void	print_points(t_map map, t_data *data);
-void	bresenham(t_dot p1, t_dot p2, t_data *data);
+void	bresenham(int *p1, int *p2, t_data *data);
 int		change_color(int z, int z2);
 int		check_split(char **split);
 t_map	proper_map(t_map map);
@@ -59,7 +53,7 @@ void	apply_scale(t_map *map);
 void	apply_centering(t_map *map);
 int		check_file(char *str);
 int		can_i_print(int x, int y, t_data *data);
-void	trace_line(t_dot p1, t_dot p2, t_data *data);
+void	trace_line(int *p1, int *p2, t_data *data, int color);
 
 
 #endif

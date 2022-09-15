@@ -11,7 +11,6 @@ SRCS =	./srcs/main.c \
 		./gnl/get_next_line.c \
 		./srcs/print_map.c \
 		./srcs/isometrics.c \
-		./srcs/bresenham.c \
 		./srcs/parse_2.c \
 		./srcs/dda.c
 
