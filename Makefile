@@ -12,7 +12,8 @@ SRCS =	./srcs/main.c \
 		./srcs/print_map.c \
 		./srcs/isometrics.c \
 		./srcs/parse_2.c \
-		./srcs/dda.c
+		./srcs/dda.c \
+		./srcs/key.c
 
 MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/

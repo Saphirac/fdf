@@ -12,6 +12,16 @@
 # include <math.h>
 # include <X11/keysym.h>
 
+
+typedef struct	s_map {
+		int	max_x;
+		int	max_y;
+		int	**map;
+		int	n_points;
+		int	scale;
+		int	center;
+}				t_map;
+
 typedef struct	s_data {
 	void	*mlx_ptr;
 	void	*win_ptr;
@@ -22,16 +32,8 @@ typedef struct	s_data {
 	int		endian;
 	int		lenght;
 	int		width;
+	t_map	map;
 }				t_data;
-
-typedef struct	s_map {
-		int	max_x;
-		int	max_y;
-		int	**map;
-		int	n_points;
-		int	scale;
-		int	center;
-}				t_map;
 
 void	img_pix_put(t_data *img, int x, int y, int color);
 
@@ -54,6 +56,8 @@ void	apply_centering(t_map *map);
 int		check_file(char *str);
 int		can_i_print(int x, int y, t_data *data);
 void	trace_line(int *p1, int *p2, t_data *data, int color);
-
+int		handle_cross(t_data *data);
+int		handle_input(int keysym, t_data *data);
+int		handle_no_event(void *data);
 
 #endif

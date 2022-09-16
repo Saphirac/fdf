@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:58:37 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/07/21 21:15:33 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/16 22:46:50 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ t_map	parse_map(char **av)
 	int		fd;
 
 	fd = open(av[1], O_RDWR);
+	if (fd <= 0)
+		exit(EXIT_FAILURE);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
 	map.scale = 6;
@@ -106,6 +108,8 @@ t_map	parse_map(char **av)
 	map.n_points = map.max_y * map.max_x;
 	close(fd);
 	fd = open(av[1], O_RDWR);
+	if (fd <= 0)
+		exit(EXIT_FAILURE);
 	fill_map_row(&map, fd);
 	close(fd);
 	ret = proper_map(map);

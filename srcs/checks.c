@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/03 16:34:29 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/16 22:57:27 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,7 @@ int	check_file(char *str)
 		return (1);
 	i = open(str, O_RDWR);
 	if (i < 0)
-	{
-		close(i);
 		return (1);
-	}
 	close(i);
 	return (0);
 }
