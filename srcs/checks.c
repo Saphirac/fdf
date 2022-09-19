@@ -67,7 +67,7 @@ int	check_file(char *str)
 
 int	can_i_print(int x, int y, t_data *data)
 {
-	if (x > data->lenght - 1 || y > (data->width - 1))
+	if (x < 0 || x >= data->lenght || y < 0 || y >= data->width)
 		return (1);
 	return (0);
 }

@@ -45,7 +45,8 @@ t_map	proper_map(t_map map)
 	ret.max_y = map.max_y;
 	ret.n_points = map.n_points;
 	ret.scale = map.scale;
-	ret.center = map.center;
+	ret.center_x = map.center_x;
+	ret.center_y = map.center_y;
 	ret.map = malloc(sizeof(int *) * (ret.n_points));
 	if (!ret.map)
 		exit(EXIT_FAILURE);

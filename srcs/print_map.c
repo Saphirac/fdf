@@ -56,10 +56,11 @@ void	print_columns(t_map map, t_data *data)
 
 void	print_points(t_map map, t_data *data)
 {
-	map.scale = 5;
+	map.scale = 50;
 	apply_scale(&map);
 	isometric_transform(&map);
-	map.center = 350;
+	map.center_x = 700;
+	map.center_y = 350;
 	apply_centering(&map);
 	print_line(map, data);
 	print_columns(map, data);
