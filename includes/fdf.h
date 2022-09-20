@@ -21,6 +21,7 @@ typedef struct	s_map {
 		float	scale;
 		int		center_x;
 		int		center_y;
+		double	angle;
 }				t_map;
 
 typedef struct	s_data {
@@ -35,6 +36,7 @@ typedef struct	s_data {
 	int		width;
 	t_map	map;
 	int		**save;
+	int		line_on;
 }				t_data;
 
 void	img_pix_put(t_data *img, int x, int y, int color);
@@ -63,5 +65,6 @@ int		handle_input(int keysym, t_data *data);
 int		handle_no_event(void *data);
 int		handle_zoom(int key, int x, int y, t_data *data);
 int		**copy_map(int **src, int size);
+void	reprint_modif(t_data *data);
 
 #endif

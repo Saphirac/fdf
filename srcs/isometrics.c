@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 03:14:14 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/14 17:41:20 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 00:53:38 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	isometric_transform(t_map *map)
 	{
 		x = map->map[i][0];
 		y = map->map[i][1];
-		map->map[i][0] = (x - y) * cos(0.523599);
-		map->map[i][1] = (x + y) * sin(0.523599) - map->map[i][2];
+		map->map[i][0] = (x - y) * cos(map->angle);
+		map->map[i][1] = (x + y) * sin(map->angle) - map->map[i][2];
 	}
 }

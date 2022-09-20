@@ -31,7 +31,8 @@ FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 	$(CC) $(CFLAGS) -I$(INC) -Imlx_linux -O3 -lm -c $< -o $@
 
 $(NAME) : $(OBJS) ${LIBFT}
-	$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
+		make -C mlx_linux
+		$(CC) $(OBJS) $(FLAGS_MLX) ${LIBFT} -o $(NAME)
 
 all: $(NAME)
 
@@ -41,6 +42,7 @@ ${LIBFT}:
 clean :
 	$(RM) $(OBJS)
 	make -C ${LIBFT_PATH} clean
+	make -C mlx_linux clean
 
 fclean : clean
 	$(RM) $(NAME)

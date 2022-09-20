@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/20 05:52:22 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 00:56:31 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,20 @@ void	print_columns(t_map map, t_data *data)
 	}
 }
 
+void	print_only_points(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->map.n_points)
+	{
+		if (can_i_print(data->map.map[i][0], data->map.map[i][1], data) == 0)
+			img_pix_put(data, data->map.map[i][0],
+				data->map.map[i][1], 0xFFFFFFFF);
+		++i;
+	}
+}
+
 void	print_points(t_data *data)
 {
 	ft_free_int(data->map.map, data->map.n_points);
@@ -62,6 +76,11 @@ void	print_points(t_data *data)
 	apply_scale(&data->map);
 	isometric_transform(&data->map);
 	apply_centering(&data->map);
-	print_line(data->map, data);
-	print_columns(data->map, data);
+	if (data->line_on == 0)
+	{
+		print_line(data->map, data);
+		print_columns(data->map, data);
+	}
+	else
+		print_only_points(data);
 }
