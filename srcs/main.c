@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:47 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/20 02:51:01 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/20 05:28:08 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	mlx_terminate(t_data data)
 	mlx_destroy_window(data.mlx_ptr, data.win_ptr);
 	mlx_destroy_image(data.mlx_ptr, data.img);
 	mlx_destroy_display(data.mlx_ptr);
+	ft_free_int(data.map.map, data.map.n_points);
+	ft_free_int(data.save, data.map.n_points);
+	free(data.mlx_ptr);
 }
 
 t_data	set_params(char **av)
@@ -43,6 +46,7 @@ t_data	set_params(char **av)
 		free(data.win_ptr);
 		exit(EXIT_FAILURE);
 	}
+	data.save = copy_map(data.map.map, data.map.n_points);
 	return (data);
 }
 
@@ -52,19 +56,16 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 		return (1);
-	if (check_file(av[1]) == 0)
-	{	
-		data = set_params(av);
-		print_points(data.map, &data);
-		mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img, 0, 0);
-		ft_free_int(data.map.map, data.map.n_points);
-		mlx_loop_hook(data.mlx_ptr, &handle_no_event, &data);
-		mlx_key_hook(data.win_ptr, &handle_input, &data);
-		mlx_hook(data.win_ptr, 17, 0L, &handle_cross, &data);
-		mlx_mouse_hook(data.win_ptr, &handle_zoom, &data);
-		mlx_loop(data.mlx_ptr);
-		mlx_terminate(data);
-		free(data.mlx_ptr);
-	}
+	if (check_file(av[1]) != 0)
+		return (1);
+	data = set_params(av);
+	print_points(&data);
+	mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img, 0, 0);
+	mlx_loop_hook(data.mlx_ptr, &handle_no_event, &data);
+	mlx_key_hook(data.win_ptr, &handle_input, &data);
+	mlx_hook(data.win_ptr, 17, 0L, &handle_cross, &data);
+	mlx_mouse_hook(data.win_ptr, &handle_zoom, &data);
+	mlx_loop(data.mlx_ptr);
+	mlx_terminate(data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/20 02:54:30 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/20 05:52:22 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	print_line(t_map map, t_data *data)
 	{
 		j = -1;
 		while (++j < map.max_x - 1)
-			trace_line(map.map[j + (map.max_x * i)], map.map[j + (map.max_x * i) + 1], data, 0xFFFFFFFF);
+			trace_line(map.map[j + (map.max_x * i)],
+				map.map[j + (map.max_x * i) + 1], data, 0xFFFFFFFF);
 		i++;
 	}
 }
@@ -54,13 +55,13 @@ void	print_columns(t_map map, t_data *data)
 	}
 }
 
-void	print_points(t_map map, t_data *data)
+void	print_points(t_data *data)
 {
-	apply_scale(&map);
-	isometric_transform(&map);
-	map.center_x = 700;
-	map.center_y = 350;
-	apply_centering(&map);
-	print_line(map, data);
-	print_columns(map, data);
+	ft_free_int(data->map.map, data->map.n_points);
+	data->map.map = copy_map(data->save, data->map.n_points);
+	apply_scale(&data->map);
+	isometric_transform(&data->map);
+	apply_centering(&data->map);
+	print_line(data->map, data);
+	print_columns(data->map, data);
 }

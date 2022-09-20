@@ -14,14 +14,13 @@
 
 
 typedef struct	s_map {
-		int	max_x;
-		int	max_y;
-		int	**map;
-		int	n_points;
-		int	scale;
-		int	center_x;
-		int	center_y;
-
+		int		max_x;
+		int		max_y;
+		int		**map;
+		int		n_points;
+		float	scale;
+		int		center_x;
+		int		center_y;
 }				t_map;
 
 typedef struct	s_data {
@@ -35,6 +34,7 @@ typedef struct	s_data {
 	int		length;
 	int		width;
 	t_map	map;
+	int		**save;
 }				t_data;
 
 void	img_pix_put(t_data *img, int x, int y, int color);
@@ -48,7 +48,7 @@ int		is_digit(char *stack);
 int		ft_strrlen(char **str);
 void	ft_free_int(int **tab, int size);
 int		ft_putstr_fd(char *str, int fd);
-void	print_points(t_map map, t_data *data);
+void	print_points(t_data *data);
 void	bresenham(int *p1, int *p2, t_data *data);
 int		change_color(int z, int z2);
 int		check_split(char **split);
@@ -61,5 +61,7 @@ void	trace_line(int *p1, int *p2, t_data *data, int color);
 int		handle_cross(t_data *data);
 int		handle_input(int keysym, t_data *data);
 int		handle_no_event(void *data);
-int		handle_zoom(int key, t_data *data);
+int		handle_zoom(int key, int x, int y, t_data *data);
+int		**copy_map(int **src, int size);
+
 #endif

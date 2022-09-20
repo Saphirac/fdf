@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dda.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 16:34:23 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/15 19:54:12 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/20 05:51:17 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_biggest(int a, int b)
 {
 	if (a > b)
-		return(a);
+		return (a);
 	else
 		return (b);
 }
@@ -27,7 +27,7 @@ void	trace_line(int *p1, int *p2, t_data *data, int color)
 	float	inc[2];
 	float	xy[2];
 	int		i;
-	
+
 	dxy[0] = p2[0] - p1[0];
 	dxy[1] = p2[1] - p1[1];
 	len = ft_biggest(ft_abs(dxy[0]), ft_abs(dxy[1]));
