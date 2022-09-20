@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 00:03:21 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/21 01:03:48 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 01:24:25 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	handle_translation_angle(int keysym, t_data *data)
 	else if (keysym == XK_F2)
 		data->map.angle = 0;
 	else if (keysym == XK_F3)
-		data->map.angle =  3;
+		data->map.angle = 3;
 }
 
 int	handle_input(int keysym, t_data *data)
