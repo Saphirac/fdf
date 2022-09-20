@@ -59,5 +59,6 @@ void	trace_line(int *p1, int *p2, t_data *data, int color);
 int		handle_cross(t_data *data);
 int		handle_input(int keysym, t_data *data);
 int		handle_no_event(void *data);
+int		handle_zoom(int key, t_data *data);
 
 #endif

@@ -1,5 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
-make: 'fdf' is up to date.
-make: Leaving directory '/mnt/nfs/homes/mcourtoi/c2/fdf'
- 

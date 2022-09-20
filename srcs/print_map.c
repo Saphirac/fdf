@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/15 20:39:34 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:32:52 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	print_columns(t_map map, t_data *data)
 
 void	print_points(t_map map, t_data *data)
 {
-	map.scale = 5;
 	apply_scale(&map);
 	isometric_transform(&map);
 	map.center = 350;

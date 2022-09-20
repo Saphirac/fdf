@@ -15,7 +15,6 @@ SRCS =	./srcs/main.c \
 		./srcs/dda.c \
 		./srcs/key.c
 
-MLX = /usr/local/lib/
 LIBFT_PATH = ./Libft/
 LIBFT = ${LIBFT_PATH}libft.a
 

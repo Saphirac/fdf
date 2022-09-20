@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 00:03:21 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/16 23:32:21 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:44:54 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,16 @@ int	handle_zoom(int key, t_data *data)
 {
 	if (key == 4)
 	{
-		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
+		printf("yo0\n");
+		mlx_destroy_image(data->mlx_ptr, data->win_ptr);
+		printf("yo1\n");
 		data->map.scale += 5;
+		printf("yo2\n");
+		data->img = mlx_new_image(data->mlx_ptr, 1920, 1080);
+		printf("yo3\n");
 		print_points(data->map, data);
+		printf("yo4\n");
+		mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img, 0, 0);
 	}
 	return (0);
 }
