@@ -6,11 +6,18 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:47 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/20 02:25:09 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/20 02:51:01 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	mlx_terminate(t_data data)
+{
+	mlx_destroy_window(data.mlx_ptr, data.win_ptr);
+	mlx_destroy_image(data.mlx_ptr, data.img);
+	mlx_destroy_display(data.mlx_ptr);
+}
 
 t_data	set_params(char **av)
 {
@@ -26,7 +33,7 @@ t_data	set_params(char **av)
 		exit(0);
 	}
 	data.img = mlx_new_image(data.mlx_ptr, 1920, 1080);
-	data.lenght = 1920;
+	data.length = 1920;
 	data.width = 1080;
 	data.addr = mlx_get_data_addr(data.img, &data.bpp,
 			&data.line_len, &data.endian);
@@ -56,7 +63,7 @@ int	main(int ac, char **av)
 		mlx_hook(data.win_ptr, 17, 0L, &handle_cross, &data);
 		mlx_mouse_hook(data.win_ptr, &handle_zoom, &data);
 		mlx_loop(data.mlx_ptr);
-		mlx_destroy_display(data.mlx_ptr);
+		mlx_terminate(data);
 		free(data.mlx_ptr);
 	}
 	return (0);

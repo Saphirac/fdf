@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/16 22:57:27 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/20 02:51:01 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_file(char *str)
 
 int	can_i_print(int x, int y, t_data *data)
 {
-	if (x < 0 || x >= data->lenght || y < 0 || y >= data->width)
+	if (x < 0 || x >= data->length || y < 0 || y >= data->width)
 		return (1);
 	return (0);
 }

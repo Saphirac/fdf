@@ -24,7 +24,7 @@ CC = gcc
 
 RM = rm -f
 
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -Wall -Wextra 
 FLAGS_MLX = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 
 .c.o:

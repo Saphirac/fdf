@@ -32,7 +32,7 @@ typedef struct	s_data {
 	int		bpp;
 	int		line_len;
 	int		endian;
-	int		lenght;
+	int		length;
 	int		width;
 	t_map	map;
 }				t_data;
