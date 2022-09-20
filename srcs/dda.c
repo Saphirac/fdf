@@ -30,7 +30,7 @@ void	trace_line(int *p1, int *p2, t_data *data, int color)
 	
 	dxy[0] = p2[0] - p1[0];
 	dxy[1] = p2[1] - p1[1];
-	len = ft_biggest(ft_abs(dxy[0]), ft_abs(dxy[0]));
+	len = ft_biggest(ft_abs(dxy[0]), ft_abs(dxy[1]));
 	inc[0] = dxy[0] / (float)len;
 	inc[1] = dxy[1] / (float)len;
 	xy[0] = p1[0];
@@ -38,7 +38,8 @@ void	trace_line(int *p1, int *p2, t_data *data, int color)
 	i = 0;
 	while (i <= len)
 	{
-		img_pix_put(data, (int)xy[0], (int)xy[1], color);
+		if (can_i_print((int)xy[0], (int)xy[1], data) == 0)
+			img_pix_put(data, (int)xy[0], (int)xy[1], color);
 		xy[0] += inc[0];
 		xy[1] += inc[1];
 		i++;

@@ -21,6 +21,7 @@ void	apply_scale(t_map *map)
 	{
 		map->map[i][0] *= map->scale;
 		map->map[i][1] *= map->scale;
+		map->map[i][2] *= map->scale;
 	}
 }
 
@@ -31,8 +32,8 @@ void	apply_centering(t_map *map)
 	i = -1;
 	while (++i < map->n_points)
 	{
-		map->map[i][0] += map->center * 2;
-		map->map[i][1] += map->center;
+		map->map[i][0] += map->center_x;
+		map->map[i][1] += map->center_y;
 	}
 }
 

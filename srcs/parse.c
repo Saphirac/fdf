@@ -103,8 +103,6 @@ t_map	parse_map(char **av)
 		exit(EXIT_FAILURE);
 	map.max_x = size_int(fd, 'x');
 	map.max_y = size_int(fd, 'y');
-	map.scale = 6;
-	map.center = 250;
 	map.n_points = map.max_y * map.max_x;
 	close(fd);
 	fd = open(av[1], O_RDWR);

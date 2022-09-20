@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:36:26 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/17 13:32:52 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/20 02:25:20 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,11 @@ void	print_columns(t_map map, t_data *data)
 
 void	print_points(t_map map, t_data *data)
 {
+	map.scale = 50;
 	apply_scale(&map);
 	isometric_transform(&map);
-	map.center = 350;
+	map.center_x = 700;
+	map.center_y = 350;
 	apply_centering(&map);
 	print_line(map, data);
 	print_columns(map, data);

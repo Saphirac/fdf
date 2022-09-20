@@ -19,7 +19,9 @@ typedef struct	s_map {
 		int	**map;
 		int	n_points;
 		int	scale;
-		int	center;
+		int	center_x;
+		int	center_y;
+
 }				t_map;
 
 typedef struct	s_data {
@@ -60,5 +62,4 @@ int		handle_cross(t_data *data);
 int		handle_input(int keysym, t_data *data);
 int		handle_no_event(void *data);
 int		handle_zoom(int key, t_data *data);
-
 #endif
