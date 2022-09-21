@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 23:58:32 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/04/27 03:26:28 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 20:00:28 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static char	*ft_get(char *stash, int fd)
 			return (NULL);
 		buf[r] = 0;
 		stash = ft_strjoinn(stash, buf);
+		if (!stash)
+			return (NULL);
 	}
 	return (stash);
 }
@@ -70,6 +72,8 @@ static char	*ft_stash(char *stash)
 		return (NULL);
 	}
 	stash = ft_strndup(stash, i + 1);
+	if (!stash)
+		return (NULL);
 	return (stash);
 }
 
@@ -87,6 +91,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	line = ft_line(stash);
+	if (!line)
+		return (NULL);
 	stash = ft_stash(stash);
+	if (!stash)
+		return (free(line), NULL);
 	return (line);
 }

@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 17:56:52 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/21 00:39:32 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 19:44:07 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,16 @@ void	reprint_modif(t_data *data)
 {
 	mlx_destroy_image(data->mlx_ptr, data->img);
 	data->img = mlx_new_image(data->mlx_ptr, data->length, data->width);
+	if (!data->img)
+		ft_error("Mlx error.\n");
 	data->addr = mlx_get_data_addr(data->img, &data->bpp,
 			&data->line_len, &data->endian);
 	print_points(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img, 0, 0);
+}
+
+void	ft_error(char *str)
+{
+	ft_putstr_fd(str, STDOUT_FILENO);
+	exit(EXIT_FAILURE);
 }

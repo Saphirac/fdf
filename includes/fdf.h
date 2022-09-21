@@ -1,30 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/21 18:55:03 by mcourtoi          #+#    #+#             */
+/*   Updated: 2022/09/21 19:32:21 by mcourtoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
+# include	<stdio.h>
+# include	<fcntl.h>
+# include	<stdlib.h>
+# include	<unistd.h>
+# include	<stdarg.h>
+# include	<libft.h>
+# include	<get_next_line.h>
+# include	<mlx.h>
+# include	<math.h>
+# include	<X11/keysym.h>
 
-# include <stdio.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include <libft.h>
-# include <get_next_line.h>
-# include <mlx.h>
-# include <math.h>
-# include <X11/keysym.h>
-
-
-typedef struct	s_map {
-		int		max_x;
-		int		max_y;
-		int		**map;
-		int		n_points;
-		float	scale;
-		int		center_x;
-		int		center_y;
-		double	angle;
+typedef struct s_map {
+	int		max_x;
+	int		max_y;
+	int		**map;
+	int		n_points;
+	float	scale;
+	int		center_x;
+	int		center_y;
+	double	angle;
 }				t_map;
 
-typedef struct	s_data {
+typedef struct s_data {
 	void	*mlx_ptr;
 	void	*win_ptr;
 	void	*img;
@@ -41,7 +51,7 @@ typedef struct	s_data {
 
 void	img_pix_put(t_data *img, int x, int y, int color);
 
-t_map	 parse_map(char **av);
+t_map	parse_map(char **av);
 void	ft_free(char **str);
 void	isometric_transform(t_map *map);
 int		*ft_calloc(int size);
@@ -66,5 +76,6 @@ int		handle_no_event(void *data);
 int		handle_zoom(int key, int x, int y, t_data *data);
 int		**copy_map(int **src, int size);
 void	reprint_modif(t_data *data);
+void	ft_error(char *str);
 
 #endif

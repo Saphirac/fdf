@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:10:09 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/04/29 19:06:30 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:58:40 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,17 @@ char	**ft_split(char const *s, char c)
 
 	n = ft_count_word(s, c);
 	tab = malloc(sizeof(char *) * (n + 1));
-	i = 0;
-	p = 0;
 	if (!tab)
 		return (NULL);
+	i = 0;
+	p = 0;
 	while (s[i] && p < n)
 	{
 		while (s[i] == c && s[i])
 			i++;
 		tab[p] = ft_strdupbis(s, c, i);
+		if (!tab[p])
+			return (NULL);
 		while (s[i] != c && s[i])
 			i++;
 		p++;
