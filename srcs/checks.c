@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 16:07:53 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/09/28 18:17:50 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:50:29 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ int	check_split(char **split)
 
 int	check_file(char *str)
 {
-	int	i;
-	char c[1];
-	int r;
+	int		i;
+	char	c[1];
+	int		r;
 
 	i = ft_strlen(str);
 	if (str[i - 1] != 'f')
