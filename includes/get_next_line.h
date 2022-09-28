@@ -6,7 +6,7 @@
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 00:18:32 by mcourtoi          #+#    #+#             */
-/*   Updated: 2022/04/26 04:33:59 by mcourtoi         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:37:00 by mcourtoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 512
+#  define BUFFER_SIZE 32
 # endif
 
 int			ft_strchrr(const char *str, char c);
